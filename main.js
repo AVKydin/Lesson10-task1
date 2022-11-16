@@ -14,7 +14,7 @@ getS(".btn-save").onclick = function () {
     getS(".top-block").innerHTML = getS(".edit-area").value;
 };
 
-getS('.btn-style').addEventListener('click', () => {
+    getS('.btn-style').addEventListener('click', () => {
     getS(".style-block").classList.add("show");
     getS(".edit-block").classList.remove("show");
 })
@@ -32,18 +32,34 @@ getS(".top-block").style.fontFamily = this.value;
 
 }
 
-let colors = ['red', 'green', 'blue', 'yellow', 'pink', 'gray', 'white', 'black', 'deeppink'];
 
-for (let i = 0; i < getS('.colors').children.length; i++) {
-    getS(".colors").children[i].style.backgroundColor = colors[i];
-    getS(".colors").children[i].onclick = function () {
-        getS(".top-block").style.color = this.style.backgroundColor;
-    };
-}
+
+
+let colors = ["red", "green", "blue", "yellow", "pink", "gray", "white", "black", "deeppink"];
 
 getS('.btn-text-color').onclick = function () {
-    getS(".colors").classList.remove('hide')
+    getS(".colors").classList.remove('hide');
+
+    for (let i = 0; i < getS(".colors").children.length; i++) {
+      getS(".colors").children[i].style.backgroundColor = colors[i];
+      getS(".colors").children[i].onclick = function () {
+          getS(".top-block").style.color = this.style.backgroundColor;
+          getS(".colors").classList.add("hide");
+      };
+
+    }
 }
+
+getS(".btn-bg-color").onclick = function () {
+    getS(".colors").classList.remove("hide");
+    for (let i = 0; i < getS(".colors").children.length; i++) {
+      getS(".colors").children[i].style.backgroundColor = colors[i];
+      getS(".colors").children[i].onclick = function () {
+          getS(".top-block").style.backgroundColor = this.style.backgroundColor;
+          getS(".colors").classList.add("hide");
+      };
+    }
+};
 
 /* start function bold style*/
 function fontWeight() {
@@ -56,10 +72,44 @@ function fontWeight() {
 }
 /* end function bold style*/
 
-getS('.btn-add').onclick = function () {
-    getS('.first').classList.remove('show');
-    getS(".second").classList.add("show");
+/* start function cursive style*/
+function fontCursive() {
+  // console.log(event.target.checked);
+  if (event.target.checked) {
+    getS(".top-block").classList.add("cursive");
+  } else {
+    getS(".top-block").classList.remove("cursive");
+  }
 }
+/* end function cursive style*/
+
+
+/*start choice*/
+getS(".btn-add").onclick = function () {
+    getS('.first').classList.remove('show');
+    getS(".block-choice").classList.add("show");
+    getS(".second").classList.add("show");
+
+    document.querySelector(".list").onclick = function () {
+      if (event.target.checked) {
+        getS(".create-list").classList.remove("hide");
+        document.querySelector(".block-choice").classList.remove("block");
+        getS(".create-table").classList.add("hide");
+      } 
+    };
+
+    document.querySelector(".table").onclick = function () {
+      if (event.target.checked) {
+        getS(".create-table").classList.remove("hide");
+        getS(".create-list").classList.add("hide");
+        document.querySelector(".block-choice").classList.remove("block");
+      }
+    };
+};
+/*end choice*/
+
+
+
 
 const list = document.forms['form-list']
 

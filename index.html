@@ -67,7 +67,9 @@
                             </div>
                         </div>
                         <div class="form-style">
+                            <h2>Style</h2>
                             <input type="checkbox" onclick="fontWeight()"><span>Bold text</span>
+                            <input type="checkbox" onclick="fontCursive()"><span>Cursive text</span>
                         </div>
                     </form>
                 </div>
@@ -75,14 +77,59 @@
         </div>
         <div class="second">
             <div class="block">
-                <h2>Choose you .....</h2>
-                <form>
-                    <input type="radio" name="choose"><span>table</span>
-                    <input type="radio" name="choose"><span>list</span>
-                </form>
-                <div class="create-list">
+                <div class="block-choice block">
+                    <h2>Choose what you want:</h2>
+                    <form>
+                        <input type="radio" class="table" name="choose"><span>table</span>
+                        <input type="radio" class="list" name="choose"><span>list</span>
+                    </form>
+                </div>
+                <div class="create-table hide" >
+                    <form name="form-table">
+                        <div class="t1">
+                            <div>
+                                <p>Count TR:</p>
+                                <p>Count TD:</p>
+                            </div>
+                            <div>
+                                <input type="text" name="count" placeholder="Count TR:"><br>
+                                <input type="text" name="count" placeholder="Count TD:"><br>
+                            </div>
+                        </div>
+                        <h2>Add style to your table:</h2>
+                        <div class="t2">
+                            <div>
+                                <p>Width of TD:</p>
+                                <p>Height of TD:</p>
+                                <p>Width of border:</p>
+                            </div>
+                            <div>
+                                <input type="text" class="t2-w" name="count" placeholder="Width of TD:"><br>
+                                <input type="text" class="t2-w" name="count" placeholder="Height of TD:"><br>
+                                <input type="text" name="count" placeholder="Width:">
+                                <span>Type of border:</span><select name="type-border">
+                                                                <option value="solid">solid</option>
+                                                                <option value="dashed">dashed</option>
+                                                                <option value="double">double</option>
+                                                                <option value="dotted">dotted</option>
+                                                            </select>
+                                <span>Color of border:</span><select name="color-border">
+                                                                <option value="black">black</option>
+                                                                <option value="red">red</option>
+                                                                <option value="yellow">yellow</option>
+                                                                <option value="blue">blue</option>
+                                                            </select>
+                            </div>                        
+                        </div>
+                        <input type="button" name="create table" id="btn-tbl" value="Create table">
+                        
+
+                    </form>
+                </div>
+                <div class="create-list hide">
                     <form name="form-list">
-                        <input type="text" name="count">
+                        <span>Count li:</span><input type="text" name="count"><br>
+                        <span>Type of marcs:</span>
                         <select name="type">
                             <option value="circle">circle</option>
                             <option value="disc">disc</option>
@@ -93,6 +140,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
     
 
