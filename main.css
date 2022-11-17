@@ -16,6 +16,11 @@
     margin: 20px 0;
     padding: 20px;
     position: relative;
+
+}
+
+.top-block{
+    padding-left: 20px;
 }
 
 .center-block{
@@ -193,25 +198,53 @@
     background-color: darkgreen;
     width: 90px;
     height: 30px;
+    border: none;
+    border-radius: 5px;
 }
 
 #btn-tbl:hover{
     cursor: pointer;
 }
 
-.create-list>form>span{
-    margin-right: 50px;
+.create-list>form{
+    display: flex;
 }
 
-.create-list>form>select, 
-.create-list>form>input{
+.l1>p{
+    margin-top: 30px;
+    margin-bottom: 30x;
+    margin-right: 20px;
+}
+
+.l2>input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.l2>select, 
+.l2>input{
     width: 800px;
     height: 30px;
     border-radius: 5px;
     border: none;
-    margin-bottom: 35px;
-    right: 25px;
-    padding-left: 10px;
+    border-radius: 5px;
+    outline-color: skyblue;
+}
+
+.btn-create-list{
+    margin-top: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgreen;
+    width: 90px;
+    height: 30px;
+}
+
+.btn-create-list:hover{
+    cursor: pointer;
 }
 
 /* .color-box:nth-of-type(1){

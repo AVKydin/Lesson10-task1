@@ -17,6 +17,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet.</p>
+                
             </div>
             <div class="center-block">
                 <input type="button" value="edit" class="btn-edit">
@@ -92,8 +93,8 @@
                                 <p>Count TD:</p>
                             </div>
                             <div>
-                                <input type="text" name="count" placeholder="Count TR:"><br>
-                                <input type="text" name="count" placeholder="Count TD:"><br>
+                                <input type="text" name="countTR" placeholder="Count TR:"><br>
+                                <input type="text" name="countTD" placeholder="Count TD:"><br>
                             </div>
                         </div>
                         <h2>Add style to your table:</h2>
@@ -104,16 +105,16 @@
                                 <p>Width of border:</p>
                             </div>
                             <div>
-                                <input type="text" class="t2-w" name="count" placeholder="Width of TD:"><br>
-                                <input type="text" class="t2-w" name="count" placeholder="Height of TD:"><br>
-                                <input type="text" name="count" placeholder="Width:">
-                                <span>Type of border:</span><select name="type-border">
+                                <input type="text" class="t2-w" name="countW" placeholder="Width of TD:"><br>
+                                <input type="text" class="t2-w" name="countH" placeholder="Height of TD:"><br>
+                                <input type="text" name="countWB" placeholder="Width:">
+                                <span>Type of border:</span><select name="typeBorder">
                                                                 <option value="solid">solid</option>
                                                                 <option value="dashed">dashed</option>
                                                                 <option value="double">double</option>
                                                                 <option value="dotted">dotted</option>
                                                             </select>
-                                <span>Color of border:</span><select name="color-border">
+                                <span>Color of border:</span><select name="colorBorder">
                                                                 <option value="black">black</option>
                                                                 <option value="red">red</option>
                                                                 <option value="yellow">yellow</option>
@@ -128,14 +129,21 @@
                 </div>
                 <div class="create-list hide">
                     <form name="form-list">
-                        <span>Count li:</span><input type="text" name="count"><br>
-                        <span>Type of marcs:</span>
-                        <select name="type">
-                            <option value="circle">circle</option>
-                            <option value="disc">disc</option>
-                            <option value="square">square</option>
-                        </select>
-                        <input type="button" value="create list" name="create" class="btn-create-list">
+                        <div class="l1">
+                            <p>Count li:</p>
+                            <p>Type of marcs:</p>
+                            <input type="button" value="create list" name="create" class="btn-create-list">
+                        </div>
+                       
+                        <div class="l2">
+                            <input type="text" name="count"><br>
+                            <select name="type">
+                                <option value="circle">circle</option>
+                                <option value="disc">disc</option>
+                                <option value="square">square</option>
+                            </select>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

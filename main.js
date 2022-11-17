@@ -11,12 +11,15 @@ getS('.btn-edit').onclick = function () {
 getS(".btn-save").onclick = function () {
     getS(".edit-block").classList.remove("show");
     // getS(".style-block").classList.remove("show");
-    getS(".top-block").innerHTML = getS(".edit-area").value;
+  getS(".top-block").innerHTML = getS(".edit-area").value;
+  getS(".create-list").classList.add("hide");
+  getS(".create-table").classList.add("hide");
 };
 
     getS('.btn-style').addEventListener('click', () => {
     getS(".style-block").classList.add("show");
     getS(".edit-block").classList.remove("show");
+     
 })
 
 function fontSize() {
@@ -108,8 +111,41 @@ getS(".btn-add").onclick = function () {
 };
 /*end choice*/
 
+/* start table create*/
+
+const table = document.forms["form-table"];
+getS("#btn-tbl").onclick = function () {
+  const countTr = table.countTR.value;
+  const countTd = table.countTD.value;
+  const countW = table.countW.value;
+  const countH = table.countH.value;
+  const countWB = table.countWB.value;
+  const typeB = table.typeBorder.value;
+  const colorB = table.colorBorder.value;
+  
+  getS(".edit-area").value += `<table style="border: ${countWB}px ${typeB} ${colorB}">`;
+
+  for (let i = 0; i < countTr; i++){
+    getS(".edit-area").value += `<tr>`;
+    for (let j = 0; j < countTd; j++) {
+      getS(".edit-area").value += `<td style="color: ${colorB};border: ${countWB}px ${typeB} ${colorB}; width: ${countW}px; height: ${countH}px">TD</td>`;
+      
+    }
+    getS(".edit-area").value += `</tr>`;
+  }
+
+  getS(".edit-area").value += `</table>`;
+  console.log(getS(".edit-area").value);
+getS(".first").classList.add("show");
+getS(".second").classList.remove("show");
+}
 
 
+
+/* end table create*/
+
+
+/* start list create*/
 
 const list = document.forms['form-list']
 
@@ -117,7 +153,7 @@ getS(".btn-create-list").onclick = function () {
   const countLi = list.count.value;
     const typeLi = list.type.value;
     
-    getS(".edit-area").value += `<ul style="list-style-type: ${typeLi}">`;
+    getS(".edit-area").value += `<ul style="list-style-type: ${typeLi}; margin-left: 35px">`;
     for (let i = 0; i < countLi; i++){
         getS(".edit-area").value += `<li>item ${i+1}</li>`;
     }
@@ -128,3 +164,5 @@ getS(".btn-create-list").onclick = function () {
 //   console.log(countLi);
 //   console.log(typeLi);
 }
+
+/* end list create*/
